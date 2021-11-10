@@ -12,8 +12,11 @@ const Login = () => {
     const { email, password } =  usuario
     
     
-    const onChange = () => {
-
+    const onChange = e => {
+        guardarUsuario({
+            ...usuario,
+            [e.target.name] : e.target.value
+        })
     }
 
 

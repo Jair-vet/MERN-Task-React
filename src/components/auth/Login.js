@@ -19,12 +19,25 @@ const Login = () => {
         })
     }
 
+    // Cuando el usuario quiere iniciar sesión
+    const onSubmit = e => {
+        e.preventDefault();
+
+
+        // Validar campos vacios
+
+        // Pasarlo al action
+
+
+    }
 
     return ( 
         <div className="form-usuario">
             <div className="contenedor-form sombra-dark">
                 <h1>Iniciar Sesión</h1>
-                <form>
+                <form
+                    onSubmit={onSubmit}
+                >
                     <div className="campo-form">
                         <label htmlFor="email">Email</label>
                         <input 

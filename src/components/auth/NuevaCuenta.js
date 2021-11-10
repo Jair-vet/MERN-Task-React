@@ -5,12 +5,14 @@ const NuevaCuenta = () => {
 
     // State para iniciar sesión
     const [usuario, guardarUsuario] = useState({
+        nombre: '',
         email: '',
         password: '',
+        confirmar: '',
     });
 
     // Extraer de Usuario
-    const { email, password } =  usuario
+    const { nombre, email, password, confirmar } =  usuario
     
     
     const onChange = e => {
@@ -48,7 +50,7 @@ const NuevaCuenta = () => {
                             id="nombre"
                             name="nombre"
                             placeholder="Nombre"
-                            value={email}
+                            value={nombre}
                             onChange={onChange}
                         />
                     </div> 
@@ -87,18 +89,18 @@ const NuevaCuenta = () => {
                             id="confirmar"
                             name="confirmar"
                             placeholder="Confirma Tu Password"
-                            value={password}
+                            value={confirmar}
                             onChange={onChange}
                         />
                     </div>
 
                     <div className="campo-form">
                         <input type="submit" className="btn btn-primario btn-block"
-                                value="Iniciar Sesión" />
+                                value="Registrarme" />
                     </div>
                 </form>
-                <Link to={'/nueva-cuenta'} className="enlace-cuenta">
-                    Obtener Cuenta
+                <Link to={'/'} className="enlace-cuenta">
+                    Volver a Inicio de Sesión
                 </Link>
             </div>
         </div>

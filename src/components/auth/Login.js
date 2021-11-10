@@ -5,7 +5,7 @@ const Login = () => {
     
     
     const onChange = () => {
-        
+
     }
 
 
@@ -21,6 +21,16 @@ const Login = () => {
                             id="email"
                             name="email"
                             placeholder="Email"
+                            onChange={onChange}
+                        />
+                    </div>
+                    <div className="campo-form">
+                        <label htmlFor="password">Password</label>
+                        <input 
+                            type="password"
+                            id="password"
+                            name="password"
+                            placeholder="Password"
                             onChange={onChange}
                         />
                     </div>

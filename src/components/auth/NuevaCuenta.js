@@ -105,7 +105,7 @@ const NuevaCuenta = () => {
      );
 }
  
-export default NuevaCuenta
+export default NuevaCuenta;
 
 
 

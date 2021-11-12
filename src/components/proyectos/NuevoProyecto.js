@@ -10,6 +10,7 @@ const NuevoProyecto = () => {
     // Extraer nombre de proyecto
     const {nombre} = proyecto;
 
+    // Leemos los contenidos del input 
     const onChangeProyecto = e => {
          guardarproyecto({
              // Clonamos el proyecto
@@ -19,6 +20,19 @@ const NuevoProyecto = () => {
          })
     }
 
+    // Cuando el usuario envia el Proyecto
+    const onSubmitProyecto = e => {
+        // Para que no se ejecute por defecto
+        e.preventDefault();
+
+        // Validar el proyecto
+
+        
+        // Agregar al State
+
+
+        // Reiniciar el form
+    }
 
 
     return ( 
@@ -31,6 +45,7 @@ const NuevoProyecto = () => {
 
             <form
                 className="formulario-nuevo-proyecto"
+                onSubmit={onSubmitProyecto}
             >
                 <input 
                     type="text"

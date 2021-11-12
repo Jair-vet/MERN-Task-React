@@ -4,10 +4,10 @@ import Tarea from './Tarea';
 const ListadoTareas = () => {
 
     const tareasProyecto = [
-        { nomre: 'Elegir Plataforma', estado: true},
-        { nomre: 'Elegir Colores', estado: false},
-        { nomre: 'Elegir Plataforma de Pago', estado: false},
-        { nomre: 'Elegir Hosting', estado: true},
+        { nombre: 'Elegir Plataforma', estado: true},
+        { nombre: 'Elegir Colores', estado: false},
+        { nombre: 'Elegir Plataforma de Pago', estado: false},
+        { nombre: 'Elegir Hosting', estado: true},
     ]
 
 

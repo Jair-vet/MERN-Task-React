@@ -1,6 +1,23 @@
-import React, {Fragment} from 'react'
+import React, {Fragment, useState} from 'react'
 
 const NuevoProyecto = () => {
+
+    // State para el Proyecto
+    const [proyecto, guardarproyecto] = useState({
+        nombre: ''
+    });
+
+    const onChangeProyecto = e => {
+         guardarproyecto({
+             // Clonamos el proyecto
+             ...proyecto,
+             // le asignamos el nuevo valor
+             [e.target.name] : e.target.value
+         })
+    }
+
+
+
     return ( 
         <Fragment>
             <button
@@ -17,6 +34,8 @@ const NuevoProyecto = () => {
                     className="input-text"
                     placeholder="Nombre Proyecto"
                     name="nombre"
+                    
+                   
                 />
 
                 <input

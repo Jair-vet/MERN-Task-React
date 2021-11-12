@@ -7,6 +7,9 @@ const NuevoProyecto = () => {
         nombre: ''
     });
 
+    // Extraer nombre de proyecto
+    const {nombre} = proyecto;
+
     const onChangeProyecto = e => {
          guardarproyecto({
              // Clonamos el proyecto
@@ -34,7 +37,8 @@ const NuevoProyecto = () => {
                     className="input-text"
                     placeholder="Nombre Proyecto"
                     name="nombre"
-                    
+                    value={nombre}
+                    onChange={onChangeProyecto}
                    
                 />
 

@@ -1,8 +1,13 @@
 import React from 'react'
 
-const Proyecto = () => {
+const Proyecto = ({proyecto}) => {
     return ( 
-        <h1>Proyecto</h1>
+        <li>
+            <button
+                type="button"
+                className="btn btn-blank"
+            >{proyecto.nombre}</button>
+        </li>
      );
 }
  

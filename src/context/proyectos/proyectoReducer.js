@@ -4,6 +4,7 @@ import {
     AGREGAR_PROYECTO,
     VALIDAR_FORMULARIO,
     PROYECTO_ACTUAL,  
+    ELIMINAR_PROYECTO,
 } from '../../types';
 
 
@@ -42,6 +43,12 @@ export default (state, action) => {
                 ...state,
                 // Crea un nuevo Arreglo que se llama proyecto y mete el valor seleccionado
                 proyecto: state.proyectos.filter( proyecto => proyecto.id === action.payload )
+            }
+        
+        case ELIMINAR_PROYECTO:
+            return{
+                ...state,
+                proyectos: state.proyectos.filter( proyecto => proyecto.id !== action.payload )
             }
 
         default:

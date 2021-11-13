@@ -24,6 +24,7 @@ const TareaState = props => {
             { nombre: 'Elegir Plataforma de Pago', estado: false, proyectoId: 2 },
             { nombre: 'Elegir Hosting', estado: true, proyectoId: 1 },
         ],
+        tareasproyecto: null
     }
 
     // Crear el dispatch y el state
@@ -36,7 +37,8 @@ const TareaState = props => {
     const obtenerTareas = proyectoId => {
         dispatch({ 
             type: TAREAS_PROYECTO,
-            payload: proyectoId
+            tareasproyecto: state.tareasproyecto,
+            payload: proyectoId,
         });
     }
 

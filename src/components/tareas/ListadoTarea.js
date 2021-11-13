@@ -14,12 +14,7 @@ const ListadoTareas = () => {
     // Desestructuracion de Arreglo para extraer el proyecto actual
     const [proyectoAtual] = proyecto;
 
-    const tareasProyecto = [
-        { nombre: 'Elegir Plataforma', estado: true},
-        { nombre: 'Elegir Colores', estado: false},
-        { nombre: 'Elegir Plataforma de Pago', estado: false},
-        { nombre: 'Elegir Hosting', estado: true},
-    ]
+    const tareasProyecto = []
 
     // Elimina un Proyecto
     const onClickEliminar = () => {

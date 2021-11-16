@@ -11,11 +11,25 @@ const FormTarea = () => {
     if(!proyecto) return null;
 
     // Desestructuracion de Arreglo para extraer el proyecto actual
-    //const [proyectoAtual] = proyecto;
+    const [proyectoAtual] = proyecto;
+
+    const onSubmit = e => {
+        e.preventDefault();
+
+        // Validar el formulario
+
+        // Pasar la validacion
+
+        // Agregar la tarea la nueva tarea al state de tareas
+
+        // Reiniciar el formulario
+    }
 
     return (
         <div className="formulario">
-            <form>
+            <form
+                onSubmit={onSubmit}
+            >
                 <div className="contenedor-input">
                     <input
                         type="text"

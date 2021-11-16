@@ -3,7 +3,7 @@ import TareaContext from './tareaContext';
 import TareaReducer from './tareaContext';
 
 import {
-     TAREAS_PROYECTO,
+    TAREAS_PROYECTO,
 } from '../../types';
 
 
@@ -48,6 +48,7 @@ const TareaState = props => {
         <TareaContext.Provider
             value={{
                 tareas: state.tareas,
+                tareasproyecto: state.tareasproyecto,
                 obtenerTareas,
             }}
         >

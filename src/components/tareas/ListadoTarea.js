@@ -1,7 +1,7 @@
 import React, { Fragment, useContext } from 'react'
 import Tarea from './Tarea';
 import proyectoContext from '../../context/proyectos/proyectoContext';
-import TareaContext from '../../context/proyectos/proyectoContext';
+import tareaContext from '../../context/tareas/tareaContext';
 
 const ListadoTareas = () => {
 
@@ -10,7 +10,7 @@ const ListadoTareas = () => {
     const { proyecto, eliminarProyecto } = proyectosContext;
 
     // Obtene las Tareas del Proyecto
-    const tareasContext = useContext(TareaContext);
+    const tareasContext = useContext(tareaContext);
     const {tareasproyecto} = tareasContext
 
     // Si no hay proyecto seleccionado

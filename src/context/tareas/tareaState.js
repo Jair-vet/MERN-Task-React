@@ -1,6 +1,6 @@
 import React, { useReducer } from 'react';
 import TareaContext from './tareaContext';
-import TareaReducer from './tareaContext';
+import TareaReducer from './tareaReducer';
 
 import {
     TAREAS_PROYECTO,
@@ -23,6 +23,7 @@ const TareaState = props => {
             { nombre: 'Elegir Colores', estado: false, proyectoId: 3 },
             { nombre: 'Elegir Plataforma de Pago', estado: false, proyectoId: 2 },
             { nombre: 'Elegir Hosting', estado: true, proyectoId: 1 },
+            { nombre: 'Elegir Jugar', estado: true, proyectoId: 1 },
         ],
         tareasproyecto: null
     }

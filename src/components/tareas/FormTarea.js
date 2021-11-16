@@ -11,7 +11,7 @@ const FormTarea = () => {
     if(!proyecto) return null;
 
     // Desestructuracion de Arreglo para extraer el proyecto actual
-    const [proyectoAtual] = proyecto;
+    //const [proyectoAtual] = proyecto;
 
     return (
         <div className="formulario">

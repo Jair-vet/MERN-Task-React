@@ -21,7 +21,7 @@ const TareaState = props => {
             { nombre: 'Elegir Colores', estado: false, proyectoId: 3 },
             { nombre: 'Elegir Plataforma de Pago', estado: false, proyectoId: 2 },
             { nombre: 'Elegir Hosting', estado: true, proyectoId: 4 },
-            { nombre: 'Elegir Colores', estado: false, proyectoId: 3 },
+            { nombre: 'Elegir Colores', estado: true, proyectoId: 3 },
             { nombre: 'Elegir Plataforma de Pago', estado: false, proyectoId: 2 },
             { nombre: 'Elegir Hosting', estado: true, proyectoId: 1 },
             { nombre: 'Elegir Jugar', estado: true, proyectoId: 1 },

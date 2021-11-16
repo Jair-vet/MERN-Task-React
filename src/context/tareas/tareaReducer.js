@@ -1,6 +1,7 @@
 import {
     TAREAS_PROYECTO,
     AGREGAR_TAREA,
+    VALIDAR_TAREA,
 } from '../../types';
 
 // eslint-disable-next-line
@@ -15,7 +16,14 @@ export default (state, action) => {
         case AGREGAR_TAREA:
             return{
                 ...state,
-                tareas: [action.payload, ...state.tareas]
+                tareas: [action.payload, ...state.tareas],
+                errortarea: false
+            }
+        case VALIDAR_TAREA:
+            return{
+                ...state,
+                errortarea: true,
+
             }
 
         default: return state;

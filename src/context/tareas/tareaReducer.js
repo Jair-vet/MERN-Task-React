@@ -4,6 +4,7 @@ import {
     VALIDAR_TAREA,
     ELIMINAR_TAREA,
     ESTADO_TAREA,
+    TAREA_ACTUAL,
 } from '../../types';
 
 // eslint-disable-next-line
@@ -36,6 +37,11 @@ export default (state, action) => {
             return{
                 ...state,
                 tareas: state.tareas.map(tarea => tarea.id === action.payload.id ? action.payload : tarea)
+            }
+        case TAREA_ACTUAL:
+            return{
+                ...state,
+                tareaseleccionada: action.payload
             }
 
         default: return state;

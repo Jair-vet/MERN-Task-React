@@ -39,12 +39,19 @@ const NuevaCuenta = () => {
         }
 
         // Password minimo sea de 6
-
+        if(password.length < 6){
+            mostrarAlerta('El password debe ser de al menos 6 caracteres', 'alerta-error');
+            return;
+        }
 
         // Los 2 password sean iguales
+        if(password !== confirmar){
+            mostrarAlerta('Los password no son iguales', 'alerta-error');
+            return;
+        }
         
-
         // Pasarlo al action
+        
 
 
     }

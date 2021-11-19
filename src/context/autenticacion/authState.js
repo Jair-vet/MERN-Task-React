@@ -75,8 +75,34 @@ const AuthState = props => {
         }
     }
 
-    // Funciones
+    // Cuando el usuario inicia sesión
+    const iniciarSecion = async datos => {
 
+        try {
+            
+            const respuesta = await clienteAxios.post('/api/auth', datos );
+            console.log(respuesta);
+            dispatch({
+                type: LOGIN_EXITOSO,
+                payload: respuesta.data,
+            });
+
+            // Obtener usuario autenticado
+            usuarioAutenticado();
+
+        } catch (error) {
+            console.log(error.response.data.msg);
+            const alerta = {
+                msg: error.response.data.msg,
+                categoria: 'alerta-error'
+            }
+
+            dispatch({
+                type: LOGIN_ERROR,
+                payload: alerta,
+            });
+        }
+    }
 
     return(
         <AuthContext.Provider
@@ -86,6 +112,7 @@ const AuthState = props => {
                 usuario: state.usuario,
                 mensaje: state.mensaje,
                 registrarUsuario,
+                iniciarSecion,
             }}
         >
             {props.children}

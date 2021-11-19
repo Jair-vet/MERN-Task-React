@@ -8,7 +8,7 @@ const NuevaCuenta = (props) => {
     // extraer los valores del context
     const alertaContext = useContext(AlertaContext);
     const { alerta, mostrarAlerta } = alertaContext;
-
+ 
     const authContext = useContext(AuthContext);
     const { mensaje, autenticado,  registrarUsuario } = authContext;
 

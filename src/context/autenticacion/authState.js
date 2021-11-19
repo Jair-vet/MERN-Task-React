@@ -3,6 +3,7 @@ import AuthReducer from './authReducer';
 import AuthContext from './authContext';
 
 import clienteAxios from '../../config/axios';
+import tokenAuth from '../../config/tokenAuth';
 
 import { 
     REGISTRO_EXITOSO,
@@ -27,16 +28,18 @@ const AuthState = props => {
     const registrarUsuario = async datos => {
         try {
 
-            const respuesta = await clienteAxios.post('/api/usuarios', datos ); 
-            console.log(respuesta.data);
+            const respuesta = await clienteAxios.post('/api/usuarios', datos );
+            console.log(respuesta);
 
             dispatch({
                 type: REGISTRO_EXITOSO,
-                payload: respuesta.data
+                payload: respuesta.data,
             });
 
+            // Obtener usuario autenticado
+            usuarioAutenticado();
+
         } catch (error) {
-            // console.log(error.response.data.msg);
             const alerta = {
                 msg: error.response.data.msg,
                 categoria: 'alerta-error'
@@ -49,9 +52,30 @@ const AuthState = props => {
         }
     }
 
+    // Retorna el usuario autenticado
+    const usuarioAutenticado = async () => {
+        const token = localStorage.getItem('token');
+        if(token){
+            tokenAuth(token);
+        } 
+        try {
+
+            const respuesta = await clienteAxios.get('/api/auth');
+            // console.log(respuesta);
+            dispatch({
+                type: OBTENER_USUARIO,
+                payload: respuesta.data.usuario
+            });
+
+        } catch (error) {
+            console.log(error.response);
+            dispatch({
+                type: LOGIN_ERROR,
+            });
+        }
+    }
+
     // Funciones
-
-
 
 
     return(
@@ -70,4 +94,3 @@ const AuthState = props => {
 }
 
 export default AuthState;
-

@@ -61,7 +61,7 @@ const AuthState = props => {
         try {
 
             const respuesta = await clienteAxios.get('/api/auth');
-            // console.log(respuesta);
+            console.log(respuesta);
             dispatch({
                 type: OBTENER_USUARIO,
                 payload: respuesta.data.usuario
@@ -76,20 +76,17 @@ const AuthState = props => {
     }
 
     // Cuando el usuario inicia sesión
-    const iniciarSecion = async datos => {
-
+    const iniciarSesion = async datos => {
         try {
+            const respuesta = await clienteAxios.post('/api/auth', datos);
             
-            const respuesta = await clienteAxios.post('/api/auth', datos );
-            console.log(respuesta);
             dispatch({
                 type: LOGIN_EXITOSO,
-                payload: respuesta.data,
+                payload: respuesta.data
             });
 
-            // Obtener usuario autenticado
+            // Obtener el usuario
             usuarioAutenticado();
-
         } catch (error) {
             console.log(error.response.data.msg);
             const alerta = {
@@ -99,8 +96,8 @@ const AuthState = props => {
 
             dispatch({
                 type: LOGIN_ERROR,
-                payload: alerta,
-            });
+                payload: alerta
+            })
         }
     }
 
@@ -112,7 +109,7 @@ const AuthState = props => {
                 usuario: state.usuario,
                 mensaje: state.mensaje,
                 registrarUsuario,
-                iniciarSecion,
+                iniciarSesion,
             }}
         >
             {props.children}

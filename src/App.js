@@ -1,5 +1,5 @@
-import React from 'react'
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import React,{ ReactFragment } from 'react'
+import { BrowserRouter as Switch, Routes, Route } from 'react-router-dom';
 
 import Login from './components/auth/Login';
 import NuevaCuenta from './components/auth/NuevaCuenta';
@@ -8,6 +8,17 @@ import ProyectoState from './context/proyectos/proyectoState';
 import TareaState from './context/tareas/tareaState';
 import AlertaState from './context/alertas/alertaState';
 import AuthState from './context/autenticacion/authState';
+import tokenAuth from './config/tokenAuth';
+import RutaPrivada from './components/rutas/RutaPrivada.js';
+
+
+// Revisar si tenemos un token
+const token = localStorage.getItem('token');
+if(token) {
+  tokenAuth(token);
+}
+
+
 
 function App() {
   return (
@@ -15,13 +26,13 @@ function App() {
       <TareaState >
         <AlertaState >
           <AuthState >
-            <Router>
-                <Routes>
+            <Routes>
+                <Switch>
                     <Route exact path="/" element={<Login/>} />
                     <Route exact path="/nueva-cuenta" element={<NuevaCuenta/>} />
                     <Route exact path="/proyectos" element={<Proyectos/>} />
-                </Routes>
-              </Router>
+                </Switch>
+              </Routes>
           </AuthState>
         </AlertaState>
       </TareaState>

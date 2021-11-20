@@ -1,6 +1,6 @@
 import { 
     MOSTRAR_ALERTA,
-    OCULATAR_ALERTA,
+    OCULTAR_ALERTA,
  } from '../../types';
 
 export default (state, action) => {
@@ -9,7 +9,8 @@ export default (state, action) => {
             return {
                 alerta: action.payload
             }
-        case OCULATAR_ALERTA:
+
+        case OCULTAR_ALERTA:
             return {
                 alerta: null
             }

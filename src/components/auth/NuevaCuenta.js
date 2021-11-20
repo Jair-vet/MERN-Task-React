@@ -3,7 +3,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import AlertaContext from '../../context/alertas/alertaContext';
 import AuthContext from '../../context/autenticacion/authContext';
 
-const NuevaCuenta = (props) => {
+const NuevaCuenta = () => {
 
     // extraer los valores del context
     const alertaContext = useContext(AlertaContext);

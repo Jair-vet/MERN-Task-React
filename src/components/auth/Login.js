@@ -11,7 +11,7 @@ const Login = () => {
     const { alerta, mostrarAlerta } = alertaContext;
 
     const authContext = useContext(AuthContext);
-    const { mensaje, autenticado, iniciarSecion } = authContext;
+    const { mensaje, autenticado, iniciarSesion } = authContext;
 
     let navigate = useNavigate();
 
@@ -57,7 +57,7 @@ const Login = () => {
         }
 
         // Pasarlo al action
-        iniciarSecion({ email, password });
+        iniciarSesion({ email, password });
 
     }
 

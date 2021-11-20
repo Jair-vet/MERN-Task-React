@@ -4,7 +4,7 @@ import alertaContext from "./alertaContext";
 
 import { 
     MOSTRAR_ALERTA,
-    OCULATAR_ALERTA,
+    OCULTAR_ALERTA,
  } from '../../types';
 
 const AlertaState = props => {
@@ -15,7 +15,7 @@ const AlertaState = props => {
 
     const [state, dispatch] = useReducer(alertaReducer, initialState);
 
-    // Agregar las funciones
+    // Funciones
     const mostrarAlerta = (msg, categoria) => {
         dispatch({
             type: MOSTRAR_ALERTA,
@@ -28,7 +28,7 @@ const AlertaState = props => {
         // Despues de 5 segundos limpia la alerta
         setTimeout(() => {
             dispatch({
-                type: OCULATAR_ALERTA
+                type: OCULTAR_ALERTA
             })
         }, 5000);
     }
